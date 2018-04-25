@@ -4,13 +4,12 @@ import * as path from 'path';
 import { ParsedArgs } from 'minimist';
 import { logging } from '@angular-devkit/core';
 import * as semver from 'semver';
-import { join } from 'path';
 import * as Git from 'nodegit';
 
 const versionKeys = ['major', 'minor', 'patch'];
 
 export default function(args: ParsedArgs, logger: logging.Logger) {
-  const angularConfig: experimental.workspace.WorkspaceSchema = require(join(__dirname, '../angular.json'));
+  const angularConfig: experimental.workspace.WorkspaceSchema = require(path.join(process.cwd(), 'angular.json'));
   const projectNames = Object.keys(angularConfig.projects);
 
   if (args._.length < 1 || !semver.valid(args._[0]) || !semver.valid(args._[0])) {
@@ -26,7 +25,7 @@ export default function(args: ParsedArgs, logger: logging.Logger) {
     if (angularConfig.projects[libName].projectType === 'library') {
       logger.info(`\t${libName}`);
       const { root } = angularConfig.projects[libName];
-      bump(path.resolve(root), version, ['package.json']);
+      bump(path.resolve(process.cwd(), root), version, ['package.json']);
     }
   });
 
