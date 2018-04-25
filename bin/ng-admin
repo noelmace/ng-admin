@@ -78,7 +78,7 @@ try {
 } catch (e) {
   logger.info(`${scriptName} doesn't exist by default`);
   logger.info(`loading ${customScriptPath}`);
-  logger.debud(e.stack);
+  logger.debug(e.stack);
   try {
     require(customScriptPath).default(args, logger);
   } catch (err) {
