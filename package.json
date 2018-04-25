@@ -1,10 +1,13 @@
 {
-  "name": "@slp/angular-cli-scripts",
+  "name": "@slp/ng-admin",
   "version": "0.0.0",
-  "description": "Angular-cli enhancement scripting",
-  "main": "index.js",
+  "description": "Angular-cli enhancement tool inspired by devkit-admin",
+  "main": "bin/ng-admin",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "ng-admin": "bin/ng-admin"
   },
   "keywords": [
     "angular-cli",
@@ -15,14 +18,18 @@
   ],
   "author": "Noël Macé <contact@noelmace.com>",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "@angular-devkit/core": "^0.5.8",
-    "@types/minimist": "^1.2.0",
-    "@types/nodegit": "^0.18.7",
-    "@types/semver": "^5.5.0",
     "bump-version": "^0.5.0",
     "minimist": "^1.2.0",
     "nodegit": "^0.22.0",
-    "semver": "^5.5.0"
+    "npm-registry-client": "^8.5.1",
+    "semver": "^5.5.0",
+    "typescript": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/minimist": "^1.2.0",
+    "@types/nodegit": "^0.18.7",
+    "@types/semver": "^5.5.0"
   }
 }
