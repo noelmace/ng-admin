@@ -25,7 +25,8 @@ const args = minimist(process.argv.slice(2), {
   boolean: ['verbose']
 });
 const scriptName = args._.shift();
-const builtinScriptPath = path.join('../scripts', scriptName);
+const builtinScriptPath = path.join(__dirname, '../scripts', scriptName);
+console.log(builtinScriptPath);
 const customScriptPath = path.join(process.cwd(), 'scripts', scriptName);
 
 // process.chdir(path.join(__dirname, '..'));
