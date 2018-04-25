@@ -12,7 +12,7 @@ export default function(args: ParsedArgs, logger: logging.Logger) {
   const angularConfig: experimental.workspace.WorkspaceSchema = require(path.join(process.cwd(), 'angular.json'));
   const projectNames = Object.keys(angularConfig.projects);
 
-  if (args._.length < 1 || !semver.valid(args._[0]) || !semver.valid(args._[0])) {
+  if (!(args._.length > 0 && ( versionKeys.includes(args._[0]) || semver.valid(args._[0])))) {
     logger.error('You must specify a version as the first argument.');
     logger.error(`Authorized versions are semver and ${versionKeys}.`);
     return;
