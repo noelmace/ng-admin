@@ -74,15 +74,22 @@ try {
   };
 }
 
+let script;
 try {
-  require(builtinScriptPath).default(args, logger);
+  script = require(builtinScriptPath).default;
 } catch (e) {
   logger.info(`${scriptName} doesn't exist by default`);
   logger.info(`loading ${customScriptPath}`);
   logger.debug(e.stack);
   try {
-    require(customScriptPath).default(args, logger);
+    script = require(customScriptPath).default;
   } catch (err) {
     logger.fatal(err.stack);
   }
+}
+
+try {
+  script(args, logger);
+} catch (err) {
+  logger.fatal(err.stack);
 }
