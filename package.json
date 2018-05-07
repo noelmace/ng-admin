@@ -1,5 +1,5 @@
 {
-  "name": "@slp/ng-admin",
+  "name": "@mace/ng-admin",
   "version": "0.1.0",
   "description": "Angular-cli enhancement tool inspired by devkit-admin",
   "main": "bin/ng-admin",
@@ -9,13 +9,7 @@
   "bin": {
     "ng-admin": "bin/ng-admin"
   },
-  "keywords": [
-    "angular-cli",
-    "ng",
-    "angular",
-    "ngx",
-    "cli"
-  ],
+  "keywords": ["angular-cli", "ng", "angular", "ngx", "cli"],
   "author": "Noël Macé <contact@noelmace.com>",
   "license": "MIT",
   "dependencies": {
