@@ -4,12 +4,19 @@
   "description": "Angular-cli enhancement tool inspired by devkit-admin",
   "main": "bin/ng-admin",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettify": "prettier --write ./**/*.{json,css,scss,md,js,ts}"
   },
   "bin": {
     "ng-admin": "bin/ng-admin"
   },
-  "keywords": ["angular-cli", "ng", "angular", "ngx", "cli"],
+  "keywords": [
+    "angular-cli",
+    "ng",
+    "angular",
+    "ngx",
+    "cli"
+  ],
   "author": "Noël Macé <contact@noelmace.com>",
   "license": "MIT",
   "dependencies": {
@@ -23,6 +30,7 @@
   "devDependencies": {
     "@types/minimist": "^1.2.0",
     "@types/nodegit": "^0.18.7",
-    "@types/semver": "^5.5.0"
+    "@types/semver": "^5.5.0",
+    "prettier": "^1.12.1"
   }
 }
